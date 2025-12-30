@@ -1,0 +1,63 @@
+version: 2
+
+sources:
+  - name: dbt_project_2
+    schema: classicmodels
+    description: "Classic models data"
+
+    tables:
+      - name: customers
+        description: "Customer data"
+        columns:
+          - name: customerNumber
+            tests: [not_null, unique]
+
+      - name: employees
+        description: "employee data"
+        columns:
+          - name: employeeNumber
+            tests: [not_null, unique]
+
+      - name: offices
+        description: "Office data"
+        columns:
+          - name: officeCode
+            tests: [not_null, unique]
+
+      - name: orderdetails
+        description: "Order line items"
+        columns:
+          - name: orderNumber
+            tests: [not_null]
+          - name: productCode
+            tests: [not_null]
+
+      - name: orders
+        description: "Orders"
+        columns:
+          - name: orderNumber
+            tests: [not_null, unique]
+          - name: orderDate
+            tests: [not_null]
+
+      - name: payments
+        description: "payments data"
+        columns:
+          - name: customerNumber
+            tests: [not_null]
+          - name: checkNumber
+            tests: [not_null]
+
+      - name: productlines
+        description: "Product line"
+        columns:
+          - name: productLine
+            tests: [not_null]
+
+      - name: products
+        description: "Product data"
+        columns:
+          - name: productCode
+            tests: [not_null, unique]
+          - name: productName
+            tests: [not_null]
