@@ -61,3 +61,32 @@ sources:
             tests: [not_null, unique]
           - name: productName
             tests: [not_null]
+  
+  - name: dim_source
+    schema: classicmodels_staging
+    description: "Classic models data"
+    
+    tables:
+      - name: stg_customers
+        description: "Staging Customer data"
+        columns:
+          - name: customer_id
+            tests: [not_null, unique]
+
+      - name: stg_products
+        description: "Staging Customer data"
+        columns:
+          - name: product_id
+            tests: [not_null, unique]
+            
+      - name: stg_employees
+        description: "employee data"
+        columns:
+          - name: employee_id
+            tests: [not_null, unique]
+
+      - name: stg_offices
+        description: "Office data"
+        columns:
+          - name: office_id
+            tests: [not_null, unique]
